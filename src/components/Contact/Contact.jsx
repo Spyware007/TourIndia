@@ -21,6 +21,7 @@ const Contact = () => {
             <p className={classes.text}>
               We&apos;re here to answer any questions you may have about our
               services. Reach out to us and we'll respond as soon as we can.
+              Thank you for your interest in our services!
             </p>
             <div className={classes.info}>
               <div className={classes.information}>

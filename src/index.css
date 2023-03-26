@@ -1,16 +1,9 @@
-@font-face {
-  font-family: SansationBold;
-  font-display: swap;
-  unicode-range: U+000-5FF;
-  src: local("Sansation_Bold"),
-    url("./assets/fonts/Sansation-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: SansationLight;
-  font-display: swap;
-  unicode-range: U+000-5FF;
-  src: local("Sansation_Light"),
-    url("./assets/fonts/Sansation-Light.ttf") format("truetype");
+:root {
+  --ff-abril-fatface: "Abril Fatface", cursive;
+  --ff-comforter-brush: "Comforter Brush", cursive;
+  --ff-heebo: "Heebo", sans-serif;
+  --mikado-blue: hsl(207, 98%, 50%);
+  --mikado-yellow: hsl(47, 98%, 50%);
 }
 * {
   margin: 0;
