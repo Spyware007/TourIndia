@@ -8,8 +8,8 @@ export const BlogsData = [
     image: b1,
     description:
       "India, officially the Republic of India, is a country in South As ...",
-    likes: "1231",
-    comments: "192",
+    likes: "99",
+    comments: "19",
     mins: "12",
   },
   {
@@ -17,7 +17,7 @@ export const BlogsData = [
     image: b2,
     description:
       "There are few sights in the world as iconic as the Taj Mahal, which is a must-see o...",
-    likes: "240",
+    likes: "40",
     comments: "32",
     mins: "3",
   },
@@ -26,7 +26,7 @@ export const BlogsData = [
     image: b3,
     description:
       "Manali is a resort town nestled in the mountains of the Indian state of...",
-    likes: "120",
+    likes: "20",
     comments: "23",
     mins: "8",
   },
