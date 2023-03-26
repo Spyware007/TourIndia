@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './Input.module.css';
+import classes from './Textarea.module.css';
 
-const Input = ({
+const Textarea = ({
 	value,
 	label = 'Undefined',
 	reference,
@@ -14,14 +14,14 @@ const Input = ({
 }) => {
 	return (
 		<>
-			<div className={classes.input_group}>
-				<input
+			<div className={classes.textarea_group}>
+				<textarea
 					autoComplete="off"
 					ref={reference}
 					type={type}
 					value={value}
 					name={name}
-					className={classes.input}
+					className={classes.textarea}
 					// placeholder={placeholder}
 					required={required}
 					onChange={onChange}
@@ -38,4 +38,4 @@ const Input = ({
 	);
 };
 
-export default Input;
+export default Textarea;

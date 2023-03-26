@@ -5,10 +5,10 @@ const Button = ({
   margin,
   children,
   onClick,
-  label,
+  label = "Undefined",
   disabled,
   filled,
-  color = "#fff",
+  color = "#000",
   padding = "15px 30px",
   fontSize = "20px",
   bgColor,
@@ -30,7 +30,7 @@ const Button = ({
             backgroundColor: bgColor,
             color: color,
           }}
-          className={filled ? classes.fill : classes.btn}
+          className={classes.btn}
           onClick={onClick}
           disabled={disabled}
         >

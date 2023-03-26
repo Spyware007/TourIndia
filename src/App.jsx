@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Loading } from "./components/common";
 import { Navbar, Footer } from "./components";
-import { Homepage } from "./pages";
+import { Homepage, Testing } from "./pages";
+import Contactpage from "./pages/Contactpage";
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false); // Make this true
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -22,6 +23,8 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Homepage />} />
+            <Route path="/contacts" element={<Contactpage />} />
+            <Route path="/testing" element={<Testing />} />
           </Routes>
           <Footer />
         </>
