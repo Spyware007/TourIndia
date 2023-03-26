@@ -1,11 +1,12 @@
 import React from "react";
-import { Button, Card } from "../components/common";
+import { BlogCard, Button, Card } from "../components/common";
 
 const Testing = () => {
   return (
     <>
       <Button />
       <Card />
+      <BlogCard />
     </>
   );
 };
