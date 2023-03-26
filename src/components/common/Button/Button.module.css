@@ -11,7 +11,7 @@
   font-family: inherit;
   font-weight: 500;
   color: black;
-  background-color: white;
+  /* background-color: white; */
   border: 1px solid #d9d9d9;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -39,9 +39,9 @@
   transition: all 0.4s;
 }
 
-.btn::after {
+/* .btn::after {
   background-color: #fff;
-}
+} */
 
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);

@@ -1,10 +1,11 @@
 import React from "react";
-import { Button } from "../components/common";
+import { Button, Card } from "../components/common";
 
 const Testing = () => {
   return (
     <>
       <Button />
+      <Card />
     </>
   );
 };

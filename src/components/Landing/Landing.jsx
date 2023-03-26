@@ -8,7 +8,7 @@ const Landing = () => {
     <>
       <div className={classes.landing}>
         <div className={classes.column1}>
-          <p className={classes.para}>Explore Your Travel</p>
+          <p className={classes.para}>Explore our India</p>
           <h1 className={classes.heading}>
             From Historical cities to natural splendours.
           </h1>

@@ -1,0 +1,111 @@
+.destination_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0;
+}
+.text1 {
+  font-family: var(--ff-comforter-brush);
+  color: var(--mikado-yellow);
+  font-size: 50px;
+}
+.text2 {
+  font-family: var(--ff-abril-fatface);
+  font-size: 50px;
+  color: #333333;
+}
+.text3 {
+  font-family: var(--ff-comforter-brush);
+  color: #000;
+  font-size: 40px;
+  color: #fff;
+}
+.text4 {
+  font-family: var(--ff-abril-fatface);
+  font-size: 20px;
+  color: #ffffff;
+  color: #000;
+}
+.outer_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 40px;
+  width: 80vw;
+  height: auto;
+  gap: 30px;
+}
+.row1,
+.row2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.big_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 540px;
+  height: 300px;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.small_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 200px;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.big_box_img,
+.small_box_img {
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s ease-in-out;
+}
+.big_box_img {
+  width: 540px;
+  height: 300px;
+}
+.small_box_img {
+  width: 350px;
+
+  height: 200px;
+}
+.text_container {
+  background: #c3f7524d;
+  background: linear-gradient(
+    90deg,
+    #c3f7527e 0%,
+    #92bedb80 44%,
+    #d923c77b 100%
+  );
+  border-radius: 8px;
+  padding: 5px 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.big_box:hover .big_box_img,
+.small_box:hover .small_box_img {
+  transform: scale(1.2);
+  opacity: 0.9;
+}

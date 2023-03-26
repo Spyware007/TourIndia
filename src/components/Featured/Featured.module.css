@@ -1,0 +1,31 @@
+.featured_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0;
+}
+.text1 {
+  font-family: var(--ff-comforter-brush);
+  color: var(--mikado-yellow);
+  font-size: 50px;
+}
+.text2 {
+  font-family: var(--ff-abril-fatface);
+  font-size: 50px;
+  color: #333333;
+}
+.cards_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
