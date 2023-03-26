@@ -6,14 +6,14 @@ import { Aboutpage, Blogspage, Explorepage, Homepage, Testing } from "./pages";
 import Contactpage from "./pages/Contactpage";
 
 const App = () => {
-  const [loading, setLoading] = useState(false); // Make this true
+  const [loading, setLoading] = useState(true); // Make this true
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
     // console.log(location);
   }, [location]);
 
-  setTimeout(() => setLoading(false), 2000);
+  setTimeout(() => setLoading(false), 3000);
   return (
     <>
       {loading ? (
