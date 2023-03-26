@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../common/index";
 import classes from "./Landing.module.css";
+import hero from "../../assets/images/hero.png";
 
 const Landing = () => {
   return (
@@ -36,7 +37,9 @@ const Landing = () => {
             </a>
           </div>
         </div>
-        <div className={classes.column2}></div>
+        <div className={classes.column2}>
+          <img src={hero} alt="" />
+        </div>
       </div>
     </>
   );

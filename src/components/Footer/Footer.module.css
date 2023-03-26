@@ -1,8 +1,16 @@
+.footer_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+}
 .outer_box {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
+  width: 90%;
   margin: 0 100px 20px 100px;
   padding: 80px 100px;
   gap: 40px;
