@@ -9,6 +9,7 @@ export const FeaturedData = [
     description:
       "Manali is a high-altitude Himalayan resort town in India’s ...",
     tags: "#Himachal #Northern",
+    id: [1, 2],
   },
   {
     location: "Ladakh",
@@ -16,11 +17,28 @@ export const FeaturedData = [
     description:
       "Ladakh is a region administered by India as a union territory...",
     tags: "#Ladakh #Mountains",
+    id: [1, 2],
   },
   {
     location: "Andaman",
     image: eight,
     description: "he Andaman Islands are an Indian archipelago in the Bay...",
     tags: "#Bengal #Islands",
+    id: [2, 3],
+  },
+  {
+    location: "Ladakh",
+    image: seven,
+    description:
+      "Ladakh is a region administered by India as a union territory...",
+    tags: "#Ladakh #Mountains",
+    id: [2, 4],
+  },
+  {
+    location: "Andaman",
+    image: eight,
+    description: "he Andaman Islands are an Indian archipelago in the Bay...",
+    tags: "#Bengal #Islands",
+    id: [2, 1],
   },
 ];

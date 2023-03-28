@@ -29,7 +29,7 @@ const Featured = () => {
   useEffect(() => {
     getData();
     console.log(tourData);
-  });
+  }, []);
   return (
     <>
       <div className={classes.featured_container}>

@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { createContext } from "react";
 import { useState } from "react";
 import ButtonFilters from "../components/Filter/ButtonFilters";
+import { FeaturedData } from "../assets/FeaturedData";
 
 // Create context
 export const MovieContext = createContext();
@@ -16,10 +17,9 @@ const Explorepage = () => {
   const [filteredMovie, setFilteredMovie] = useState([]);
 
   const fetchPopularMovie = async () => {
-    const response = await fetch();
-    const movies = await response.json();
-    setPopularMovies(movies.results);
-    setFilteredMovie(movies.results);
+    const movies = FeaturedData;
+    setPopularMovies(movies);
+    setFilteredMovie(movies.id);
   };
 
   useEffect(() => {

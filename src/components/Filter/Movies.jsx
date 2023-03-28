@@ -9,7 +9,7 @@ const Movies = () => {
   const { filteredMovie } = useContext(MovieContext);
   console.log(filteredMovie);
 
-  return FeaturedData?.map((place) => (
+  return filteredMovie?.map((place, i) => (
     <motion.div
       className="image-card"
       key={place.id}

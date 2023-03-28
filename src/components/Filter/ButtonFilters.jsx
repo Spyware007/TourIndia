@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { MovieContext } from "../../pages/Explorepage";
 import { genres } from "../../untils";
@@ -11,7 +11,7 @@ const ButtonFilters = () => {
   const handleClickFilter = (id) => {
     setTabActive(id);
     const filteredMovie = popularMovies.filter((movie) =>
-      movie.genre_ids.includes(id)
+      movie.id.includes(id)
     );
     if (id === 0) {
       setFilteredMovie(popularMovies);
