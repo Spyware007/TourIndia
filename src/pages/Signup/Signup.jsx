@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
+import http from "../../api";
+import Swal from "sweetalert2";
+
 import { useState } from "react";
 import classes from "./Signup.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   AiOutlineUser,
   AiOutlineMail,
@@ -12,11 +15,93 @@ import {
 import { Button } from "../../components/common/index";
 
 const Signup = () => {
+  const redirect = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   function toggleShowPassword() {
     setShowPassword(!showPassword);
   }
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const { name, email, password, password2 } = user;
+
+  const onChangeHandler = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const onSubmitUserHandler = async (e) => {
+    e.preventDefault();
+    if (name === "" || email === "" || password === "") {
+      // AlertContext.setAlert("Please enter all fields", "danger"); add a state
+    } else if (password !== password2) {
+      // AlertContext.setAlert("Passwords do not match", "danger"); add a state
+    } else {
+      try {
+        await registerUser({ name, email, password });
+        redirect("/login");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
+  const registerUser = (name, email, password) => {
+    try {
+      http.post("/user/api/user/signup", user).then(
+        () => {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your query is sent to us.",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        },
+        (error) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error,
+          });
+        }
+      );
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error,
+      });
+    }
+    setUser({
+      name: "",
+      email: "",
+      password: "",
+    });
+  };
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    if (name === "" || email === "" || password === "") {
+      // AlertContext.setAlert("Please enter all fields", "danger"); add a state
+    } else {
+      try {
+        await registerUser({ name, email, password });
+        redirect("/login");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
+  useEffect(() => {
+    console.log(user);
+  });
 
   return (
     <>
@@ -30,7 +115,7 @@ const Signup = () => {
               <NavLink to="/login">Log In</NavLink>
             </button>
           </div>
-          <form className={classes.signupForm}>
+          <form onSubmit={onSubmitHandler} className={classes.signupForm}>
             {/* <label className={classes.inputLabel}>Name <span className={classes.mandatory}>*</span></label> */}
             <div className={classes.inputField}>
               <AiOutlineUser
@@ -40,6 +125,9 @@ const Signup = () => {
               />
               <input
                 type="text"
+                value={name}
+                name="name"
+                onChange={onChangeHandler}
                 className={classes.inputAns}
                 placeholder="Your Name or UserName"
               />
@@ -54,6 +142,9 @@ const Signup = () => {
               />
               <input
                 type="text"
+                value={email}
+                name="email"
+                onChange={onChangeHandler}
                 className={classes.inputAns}
                 placeholder="Your Email"
               />
@@ -70,6 +161,8 @@ const Signup = () => {
                 type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
+                value={password}
+                onChange={onChangeHandler}
                 className={classes.inputAns}
                 placeholder="Enter Password"
               />

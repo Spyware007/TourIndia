@@ -1,40 +1,23 @@
 import Tour from "../models/tour.model.js";
 
 const addTour = async (req, res) => {
-  const {
-    role,
-    location,
-    companyName,
-    stipend,
-    category,
-    batch,
-    description,
-    link,
-  } = req.body;
-  if (
-    !role ||
-    !companyName ||
-    !batch ||
-    !location ||
-    !description ||
-    !category ||
-    !link ||
-    stipend < 1
-  ) {
+  const { tags, location, companyName, stipend, category, batch, description } =
+    req.body;
+  if (!tags || !location || !description) {
     res.status(400).json({ message: "Please Provide valid details" });
     // throw new Error("Please provide valid details");
   }
   const imageBuffer = req.files?.[0]?.buffer ? req.files?.[0]?.buffer : null;
 
   const tour = new Tour({
-    role,
+    tags,
     location,
     companyName,
     stipend,
     batch,
     description,
     category,
-    link,
+
     image: imageBuffer,
   });
   await tour.save();
@@ -51,27 +34,21 @@ const getAllTours = async (req, res) => {
 
       const {
         _id,
-        role,
+        tags,
         location,
-        companyName,
-        stipend,
-        batch,
+
         description,
         category,
-        link,
       } = tour;
 
       return {
         image: base64Image,
         _id,
-        role,
+        tags,
         location,
-        companyName,
-        stipend,
-        batch,
+
         category,
         description,
-        link,
       };
     } else {
       return tour;
@@ -102,7 +79,7 @@ const searchTours = async (req, res) => {
   let searchedTours = await Tour.find({
     $or: [
       {
-        role: { $regex: req.params.key },
+        tags: { $regex: req.params.key },
       },
       { companyName: { $regex: req.params.key } },
       { batch: { $regex: req.params.key } },
@@ -116,27 +93,23 @@ const searchTours = async (req, res) => {
 
       const {
         _id,
-        role,
+        tags,
         location,
-        companyName,
-        stipend,
-        batch,
+
         category,
         description,
-        link,
       } = tour;
 
       return {
         image: base64Image,
         _id,
-        role,
+        tags,
         location,
         companyName,
         stipend,
         category,
         batch,
         description,
-        link,
       };
     } else {
       return tour;

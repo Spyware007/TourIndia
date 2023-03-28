@@ -9,7 +9,7 @@ const Movies = () => {
   const { filteredMovie } = useContext(MovieContext);
   console.log(filteredMovie);
 
-  return FeaturedData.map((place) => (
+  return FeaturedData?.map((place) => (
     <motion.div
       className="image-card"
       key={place.id}
@@ -24,12 +24,7 @@ const Movies = () => {
         alt={movie.title}
       />
       <h2>{movie.title}</h2> */}
-      <Card
-        location={place.location}
-        image={place.image}
-        description={place.description}
-        tags={place.tags}
-      />
+      <Card data={place} show={true} imgPreview={place.image} />
     </motion.div>
   ));
 };

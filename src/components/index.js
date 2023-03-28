@@ -6,3 +6,4 @@ export { default as About } from "./About/About";
 export { default as Movies } from "./Filter/Movies";
 export { default as Blogs } from "./Blogs/Blogs";
 export { default as Footer } from "./Footer/Footer";
+export { default as Hidden } from "./Hidden/Hidden";

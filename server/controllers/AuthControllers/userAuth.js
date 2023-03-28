@@ -37,7 +37,7 @@ const createUser = asyncHandler(async (req, res) => {
 
   const token = await user.generateAuthToken();
 
-  res.status(201).json({ name, email, role, token, address });
+  res.status(201).json({ name, email, token });
 });
 
 // @desc Login User

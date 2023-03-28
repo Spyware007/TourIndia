@@ -1,7 +1,12 @@
 import React from "react";
+import { Hidden } from "../components";
 
 const AuthenticatedPage = () => {
-  return <div>hel</div>;
+  return (
+    <div>
+      <Hidden />
+    </div>
+  );
 };
 
 export default AuthenticatedPage;
