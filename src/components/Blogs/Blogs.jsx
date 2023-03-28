@@ -8,8 +8,20 @@ const Blogs = () => {
     <>
       <div className={classes.featured_container}>
         <div className={classes.header}>
-          <p className={classes.text1}>Blogs and Experiences</p>
-          <p className={classes.text2}>Latest News and Articles</p>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className={classes.text1}
+          >
+            Blogs and Experiences
+          </p>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            className={classes.text2}
+          >
+            Latest News and Articles
+          </p>
         </div>
         <div className={classes.cards_container}>
           {BlogsData.map((place, i) => {

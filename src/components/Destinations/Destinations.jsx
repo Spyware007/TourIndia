@@ -11,19 +11,39 @@ const Destinations = () => {
     <>
       <div className={classes.destination_container}>
         <div className={classes.header}>
-          <p className={classes.text1}>Destinations</p>
-          <p className={classes.text2}>Chose your place</p>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className={classes.text1}
+          >
+            Destinations
+          </p>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            className={classes.text2}
+          >
+            Chose your place
+          </p>
         </div>
         <div className={classes.outer_box}>
           <div className={classes.row1}>
-            <div className={classes.big_box}>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="500"
+              className={classes.big_box}
+            >
               <img className={classes.big_box_img} src={one} alt="" />
               <div className={classes.text_container}>
                 <p className={classes.text3}>Taj Mahal</p>
                 <p className={classes.text4}>Agra</p>
               </div>
             </div>
-            <div className={classes.big_box}>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="500"
+              className={classes.big_box}
+            >
               <img className={classes.big_box_img} src={two} alt="" />
               <div className={classes.text_container}>
                 <p className={classes.text3}>Red Fort</p>
@@ -32,21 +52,33 @@ const Destinations = () => {
             </div>
           </div>
           <div className={classes.row2}>
-            <div className={classes.small_box}>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="500"
+              className={classes.small_box}
+            >
               <img className={classes.small_box_img} src={four} alt="" />
               <div className={classes.text_container}>
                 <p className={classes.text3}> Earth Centre</p>
                 <p className={classes.text4}>Kollam</p>
               </div>
             </div>
-            <div className={classes.small_box}>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="500"
+              className={classes.small_box}
+            >
               <img className={classes.small_box_img} src={three} alt="" />
               <div className={classes.text_container}>
                 <p className={classes.text3}>Statue of Unity</p>
                 <p className={classes.text4}>Gujarat</p>
               </div>
             </div>
-            <div className={classes.small_box}>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="500"
+              className={classes.small_box}
+            >
               <img className={classes.small_box_img} src={five} alt="" />
               <div className={classes.text_container}>
                 <p className={classes.text3}>Maravanthuruthu</p>

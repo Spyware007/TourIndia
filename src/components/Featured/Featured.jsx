@@ -34,8 +34,20 @@ const Featured = () => {
     <>
       <div className={classes.featured_container}>
         <div className={classes.header}>
-          <p className={classes.text1}>Featureds</p>
-          <p className={classes.text2}>Most Popular Tours</p>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className={classes.text1}
+          >
+            Featureds
+          </p>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            className={classes.text2}
+          >
+            Most Popular Tours
+          </p>
         </div>
         <div className={classes.cards_container}>
           {tourData?.map((place, i) => {

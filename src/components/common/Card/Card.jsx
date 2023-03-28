@@ -7,7 +7,7 @@ const Card = ({ data, imgPreview, show }) => {
   const { location, image, description, tags } = data;
   return (
     <>
-      <div className={classes.card}>
+      <div data-aos="fade-up" data-aos-duration="500" className={classes.card}>
         {show ? (
           <div className={classes.header}>
             <img className={classes.img} src={imgPreview} alt="location" />
