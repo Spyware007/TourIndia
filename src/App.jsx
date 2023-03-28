@@ -10,6 +10,7 @@ import {
   Login,
   Signup,
   Testing,
+  AuthenticatedPage,
 } from "./pages";
 import Contactpage from "./pages/Contactpage";
 
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="/about" element={<Aboutpage />} />
             <Route path="/login" element={<Signup />} />
             <Route path="/signup" element={<Login />} />
+            <Route path="/admin" element={<AuthenticatedPage />} />
             <Route path="/testing" element={<Testing />} />
           </Routes>
           <Footer />

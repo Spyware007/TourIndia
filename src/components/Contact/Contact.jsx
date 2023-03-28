@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Contact.module.css";
+import http from "../../api";
+import Swal from "sweetalert2";
 
 import { Button, Input, Textarea } from "../common";
 import {
@@ -12,6 +14,61 @@ import {
 } from "react-icons/fa";
 
 const Contact = () => {
+  const [contact, setContact] = useState({
+    name: "",
+    email: "",
+    phoneNo: "",
+    message: "",
+  });
+
+  const { name, email, phoneNo, message } = contact;
+
+  const onChangeHandler = (e) => {
+    setContact({
+      ...contact,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    if (name === "" || email === "" || phoneNo === "" || message === "") {
+      // AlertContext.setAlert("Please enter all fields", "danger"); add a state
+      alert("Please fill all  the fields");
+    }
+    try {
+      http.post("/contact/createContact", contact).then(
+        () => {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your query is sent to us.",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        },
+        (error) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error,
+          });
+        }
+      );
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error,
+      });
+    }
+    setContact({
+      name: "",
+      email: "",
+      phoneNo: "",
+      message: "",
+    });
+  };
+
   return (
     <>
       <div className={classes.container}>
@@ -67,38 +124,36 @@ const Contact = () => {
             <span className={`${classes.circle} ${classes.one}`}></span>
             <span className={`${classes.circle} ${classes.two}`}></span>
 
-            <form
-            // onSubmit={submitHandler}
-            >
+            <form onSubmit={submitHandler}>
               <h3 className={classes.title}>Contact Us</h3>
               <Input
-                // onChange={onChangeHandler}
+                onChange={onChangeHandler}
                 type="text"
-                // value={name}
+                value={name}
                 label="Name"
                 name="name"
                 required
               />
               <Input
-                // onChange={onChangeHandler}
+                onChange={onChangeHandler}
                 type="text"
-                // value={email}
+                value={email}
                 label="Email"
                 name="email"
                 required
               />
               <Input
-                // onChange={onChangeHandler}
+                onChange={onChangeHandler}
                 type="text"
-                // value={phoneNo}
+                value={phoneNo}
                 label="Mobile Number"
                 name="phoneNo"
                 required
               />
               <Textarea
-                // onChange={onChangeHandler}
+                onChange={onChangeHandler}
                 type="text"
-                // value={message}
+                value={message}
                 label="Your Message"
                 name="message"
                 required

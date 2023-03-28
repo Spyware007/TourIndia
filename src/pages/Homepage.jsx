@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Blogs, Destinations, Featured, Landing } from "../components";
+import { About, Blogs, Destinations, Featured, Landing } from "../components";
 import { Button } from "../components/common";
 
 const Homepage = () => {
@@ -37,6 +37,7 @@ const Homepage = () => {
           <Button label="Show More" />
         </div>
       </NavLink>
+      <About />
     </>
   );
 };

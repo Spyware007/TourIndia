@@ -11,6 +11,11 @@ import { Button } from "../../components/common/index";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
 
   function toggleShowPassword() {
     setShowPassword(!showPassword);
