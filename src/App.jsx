@@ -15,7 +15,7 @@ import {
 import Contactpage from "./pages/Contactpage";
 
 const App = () => {
-  const [loading, setLoading] = useState(false); // Make this true
+  const [loading, setLoading] = useState(true); // Make this true
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -15,6 +15,7 @@ import Swal from "sweetalert2";
 const Login = () => {
   const redirect = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
 
   function toggleShowPassword() {
     setShowPassword(!showPassword);
@@ -42,8 +43,10 @@ const Login = () => {
     } else {
       try {
         await loginUser({ email, password });
-        redirect("/admin");
+        setIsUserAuthenticated(true);
+        redirect("/admin", { state: isUserAuthenticated });
       } catch (error) {
+        redirect("/", { state: isUserAuthenticated });
         console.log(error);
       }
     }

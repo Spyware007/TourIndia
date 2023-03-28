@@ -109,3 +109,26 @@
   transform: scale(1.2);
   opacity: 0.9;
 }
+@media screen and (max-width: 1000px) {
+  .row1,
+  .row2 {
+    flex-direction: column;
+  }
+  .big_box {
+    width: 540px;
+    height: 300px;
+  }
+  .small_box {
+    width: 540px;
+
+    height: 200px;
+  }
+  .big_box_img {
+    width: 540px;
+    height: 300px;
+  }
+  .small_box_img {
+    width: 540px;
+    height: 200px;
+  }
+}

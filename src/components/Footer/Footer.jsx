@@ -13,9 +13,7 @@ const Footer = () => {
   return (
     <>
       <div className={classes.footer_container}>
-        <div>
-          <img src={footerpng} alt="" />
-        </div>
+        <img className={classes.footer_img} src={footerpng} alt="" />
         <footer className={classes.outer_box}>
           <div className={classes.row1}>
             <NavLink to="/">

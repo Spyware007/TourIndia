@@ -5,12 +5,15 @@
   flex-direction: column;
   width: 100vw;
 }
+.footer_img {
+  width: 100%;
+}
 .outer_box {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   margin: 0 100px 20px 100px;
   padding: 80px 100px;
   gap: 40px;

@@ -1,8 +1,7 @@
 import Tour from "../models/tour.model.js";
 
 const addTour = async (req, res) => {
-  const { tags, location, companyName, stipend, category, batch, description } =
-    req.body;
+  const { tags, location, category, description } = req.body;
   if (!tags || !location || !description) {
     res.status(400).json({ message: "Please Provide valid details" });
     // throw new Error("Please provide valid details");
@@ -12,12 +11,8 @@ const addTour = async (req, res) => {
   const tour = new Tour({
     tags,
     location,
-    companyName,
-    stipend,
-    batch,
     description,
     category,
-
     image: imageBuffer,
   });
   await tour.save();
@@ -32,21 +27,13 @@ const getAllTours = async (req, res) => {
       let buffer = Buffer.from(tour.image);
       let base64Image = buffer.toString("base64");
 
-      const {
-        _id,
-        tags,
-        location,
-
-        description,
-        category,
-      } = tour;
+      const { _id, tags, location, description, category } = tour;
 
       return {
         image: base64Image,
         _id,
         tags,
         location,
-
         category,
         description,
       };

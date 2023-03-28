@@ -1,10 +1,12 @@
 import React from "react";
 import classes from "./Navbar.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import img from "../../assets/images/logo.jpg";
 import { useState } from "react";
 
 const Navbar = () => {
+  const location = useLocation();
+  const isUserAuthenticated = location?.state;
   const [active, setActive] = useState(false);
   return (
     <>
@@ -75,6 +77,7 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
+
             <li
               className={`${classes.navbar_item} `}
               onClick={() => {
@@ -82,7 +85,7 @@ const Navbar = () => {
               }}
             >
               <NavLink to="/login" className={classes.link_text}>
-                LogIn
+                {isUserAuthenticated ? "" : "LogIn"}
               </NavLink>
             </li>
             <li className={classes.links}></li>

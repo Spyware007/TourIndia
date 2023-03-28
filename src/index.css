@@ -64,7 +64,7 @@ a {
 .image-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: 12rem 2rem;
+  gap: 14rem 2rem;
   margin-top: 2rem;
   margin-bottom: 200px;
 }
@@ -90,4 +90,10 @@ a {
   left: 1rem;
   font-size: 1rem;
   text-shadow: 2px 2px black;
+}
+.chose_a_Section {
+  font-size: 40px;
+  margin-top: 20px;
+  font-family: var(--ff-comforter-brush);
+  color: var(--mikado-yellow);
 }

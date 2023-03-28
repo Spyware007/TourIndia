@@ -21,18 +21,21 @@ const ButtonFilters = () => {
   };
 
   return (
-    <div className="button-wrapper">
-      {genres.map((item) => (
-        <Button
-          label={item.name}
-          key={item.id}
-          className={tabActive === item.id ? "active" : undefined}
-          onClick={() => handleClickFilter(item.id)}
-        >
-          {item.name}
-        </Button>
-      ))}
-    </div>
+    <>
+      <h1 className="chose_a_Section">Choose a section!</h1>
+      <div className="button-wrapper">
+        {genres.map((item) => (
+          <Button
+            label={item.name}
+            key={item.id}
+            className={tabActive === item.id ? "active" : undefined}
+            onClick={() => handleClickFilter(item.id)}
+          >
+            {item.name}
+          </Button>
+        ))}
+      </div>
+    </>
   );
 };
 

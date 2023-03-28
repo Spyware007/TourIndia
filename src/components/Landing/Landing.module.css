@@ -44,3 +44,14 @@
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 1000px) {
+  .landing {
+    height: auto;
+  }
+  .column1 {
+    margin-left: 0;
+  }
+  .column2 {
+    display: none;
+  }
+}
