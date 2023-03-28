@@ -75,6 +75,16 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
+            <li
+              className={`${classes.navbar_item} `}
+              onClick={() => {
+                setActive((prevValue) => !prevValue);
+              }}
+            >
+              <NavLink to="/login" className={classes.link_text}>
+                LogIn
+              </NavLink>
+            </li>
             <li className={classes.links}></li>
           </ul>
           <div
